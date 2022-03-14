@@ -1,0 +1,56 @@
+.download-client {
+
+	padding-top: vh(125);
+
+	&__container {
+		width: 155rem + 1.5rem * 2;
+	}
+
+	// .download-client__grid
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(2, max-content);
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	// .download-client__title
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: vh(92);
+		}
+	}
+
+	// .download-client__list
+
+	&__list {
+		display: grid;
+		grid-gap: vh(80);
+	}
+
+	// .download-client__link
+
+	&__link {
+		@extend %text-48;
+		font-weight: 900;
+		text-transform: uppercase;
+		transition: .3s color;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: #FFD400;
+			}
+		}
+	}
+
+	// .download-client__text
+
+	&__text {
+		@extend %text-36;
+		font-weight: 200;
+		max-width: 67.7rem;
+		color: rgba(#fff, .4);
+	}
+}

@@ -1,13 +1,15 @@
 .btn {
-    text-align: center;
-    transition: 0.3s all;
+	@extend %text-30;
+	font-weight: 600;
+	background-color: #FFD400;
+	border-radius: 5rem;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 0.3s all;
 
-    @media (any-hover: hover) {
-        &:hover {
-        }
-    }
-
-    &--border {
-        //border: 0.1rem solid #;
-    }
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #FDBF00;
+		}
+	}
 }

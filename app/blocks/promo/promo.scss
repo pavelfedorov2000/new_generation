@@ -1,3 +1,92 @@
 .promo {
-  // your code
+
+	padding-top: 19rem;
+	// .promo__grid
+
+	&__grid {
+		display: grid;
+		width: 108.2rem;
+		grid-template-rows: 1fr max-content 2.7rem max-content 6.3rem 7.5rem 34.6rem - 30.7rem;
+		grid-template-columns: minmax(31.5rem, max-content) 3.2rem max-content 54.1rem;
+		align-items: center;
+		grid-template-areas:
+			". . . img"
+			"title title title img"
+			". . . img"
+			"subtitle subtitle subtitle img"
+			". . . img"
+			"btn . descr img"
+			". . . img"
+		;
+	}
+
+	// .promo__title
+
+	&__title {
+		grid-area: title;
+	}
+
+	// .promo__subtitle
+
+	&__subtitle {
+		grid-area: subtitle;
+		@extend %text-18;
+		text-transform: uppercase;
+	}
+
+	// .promo__btn
+
+	&__btn {
+		grid-area: btn;
+		align-self: stretch;
+	}
+
+	// .promo__description
+
+	&__description {
+		grid-area: descr;
+		position: relative;
+
+		p {
+			@extend %text-16;
+			font-weight: 900;
+			color: rgba(#fff, .4);
+			transition: .3s color;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+
+		span {
+			position: absolute;
+			top: calc(100% + 1.2rem);
+			left: (181 - 32) / 202 * 100%;
+			@extend %text-12;
+			font-weight: 900;
+			text-transform: uppercase;
+			color: #FDBF00;
+			white-space: nowrap;
+			padding-left: 2.8rem;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: -0.5rem;
+				left: 0;
+				width: 2.2rem;
+				height: 1.6rem;
+				background-image: url(../images/descr-arrow.svg);
+				@extend %bg-contain;
+			}
+		}
+	}
+
+	// .promo__img
+
+	&__img {
+		grid-area: img;
+	}
 }

@@ -1,56 +1,93 @@
-.burger-btn {
-	display: none;
+.burger-menu {
+	position: absolute;
+	top: -100vh;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+	//background-color: $accent;
+	transition: 0.5s top;
+	overflow: auto;
+	background-color: #000;
+	padding-top: 147 * 100vh / 1080;
+	padding-bottom: 128 * 100vh / 1080;
 
-	@media (max-width: 1024px) {
-		width: 3rem;
-		height: 2.7rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		cursor: pointer;
+	&.active {
+		top: 0;
 	}
 
-	&__item {
-		display: block;
-		width: 100%;
-		height: 3px;
-		background-color: #fff;
-		transition: 0.5s all;
+	&__back {
+		position: absolute;
+		left: 476 * 100vw / 1920;
+		@extend %pos-center-y;
+		z-index: 102;
+		width: 5.9rem;
+		height: 5.9rem;
+		background-image: url(../images/back.svg);
+		@extend %bg-contain;
 	}
 
-	&--active {
-		.burger-btn__item {
-			&:nth-child(1) {
-				transform: rotate(45deg);
-				margin-top: 1.2rem;
-			}
+	// .burger-menu__label
 
-			&:nth-child(2) {
-				display: none;
-			}
+	&__label {
+		transform: translateX(14.5rem) rotate(360deg);
+		transition: 1s transform;
 
-			&:nth-child(3) {
-				transform: rotate(-45deg);
-				margin-bottom: 1.2rem;
+		&.active {
+			transform: translateX(0) rotate(0);
+		}
+	}
+
+	// .burger-menu__body
+
+	&__body {
+		position: relative;
+		height: 100%;
+		display: grid;
+		grid-template-rows: 1fr 3rem max-content;
+		justify-items: center;
+		grid-template-areas:
+			"nav"
+			"."
+			"soc"
+		;
+	}
+
+	// .burger-menu__nav
+
+	&__nav {
+		grid-area: nav;
+	}
+
+	// .burger-menu__list
+
+	&__list {
+		display: grid;
+		grid-gap: 7.5rem;
+		justify-items: center;
+	}
+
+	// .burger-menu__list-link
+
+	&__list-link {
+		@extend %text-72;
+		font-weight: 200;
+		text-transform: uppercase;
+		transition: .3s all;
+
+		@media (any-hover: hover) {
+			&:hover {
+				font-weight: 900;
 			}
 		}
 	}
-}
 
-.burger-menu {
-	display: none;
+	// .burger-menu__social
 
-	@media (max-width: 1024px) {
-		display: block;
-		position: absolute;
-		top: 0;
-		left: -100%;
-		z-index: 101;
-		width: 50%;
-		height: 100vh;
-		//background-color: $accent;
-		transition: 0.5s left;
-		overflow: auto;
+	&__social {
+		grid-area: soc;
 	}
 
 	@media (max-width: 575px) {
@@ -60,6 +97,32 @@
 	&--active {
 		@media (max-width: 1024px) {
 			left: 0;
+		}
+	}
+}
+
+.social {
+
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 2.4rem;
+	// .social__item
+
+	&__item {}
+
+	// .social__link
+
+	&__link {
+		@extend %ubuntu;
+		@extend %text-24;
+		font-weight: 300;
+		color: #FDBF00;
+		transition: .3s color;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: #FFD400;
+			}
 		}
 	}
 }

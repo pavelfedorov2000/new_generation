@@ -15,11 +15,11 @@
 
 ._progress__link {
 	display: block;
-	font-size: 1.5vmax;
-	margin-bottom: 10px;
+	@extend %text-24;
+	margin-bottom: 2rem;
 	font-weight: 700;
 	text-transform: uppercase;
-	color: #222;
+	opacity: .5;
 	transition: opacity 0.3s;
 
 	&.done {
@@ -28,7 +28,7 @@
 
 	@media (any-hover: hover) {
 		&:hover {
-			opacity: 0.5;
+			opacity: 1;
 		}
 	}
 }

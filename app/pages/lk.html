@@ -1,0 +1,69 @@
+@@include("blocks/head/head.html", {"title": "Личный кабинет"})
+<main class="page lk">
+	<a href="#" class="label">Проблемы с запуском?</a>
+	@@include('blocks/burger/burger.html')
+	<div class="marquee marquee--top">
+		<img src="assets/images/marquee.svg" alt="image">
+		<img src="assets/images/marquee.svg" alt="image">
+		<img src="assets/images/marquee.svg" alt="image">
+	</div>
+	<div class="_container lk__container">
+		<h1 class="lk__title">Личный кабинет</h1>
+		<div class="user lk__user">
+			<picture class="user__img">
+				<source type="image/webp" data-srcset="assets/images/user.webp">
+				<img class="lazy" data-src="assets/images/user.png" alt="image" width="160" height="160">
+			</picture>
+			<div class="user__name">Vasia</div>
+			<div class="user__balance">
+				<span>2000 </span>
+				Toll
+			</div>
+			<div class="user__status">
+				VIP статус активен до :
+				<time datetime="2022-04-01">01/04/2022</time>
+			</div>
+		</div>
+		<ul class="lk__menu">
+			<li><a href="#" class="lk__menu-link">Cмена пароля</a></li>
+			<li><a href="#" class="lk__menu-link">Пополнение счета</a></li>
+			<li data-target="teleport">
+				<a href="#" class="lk__menu-link">
+					Телепорт
+				</a>
+				<form action="#" class="teleport-form">
+					<div class="teleport-form__items">
+						<label class="teleport-form__item">
+							<input type="radio" name="teleport">
+							<span>Персонаж</span>
+						</label>
+						<label class="teleport-form__item">
+							<input type="radio" name="teleport">
+							<span>Персонаж</span>
+						</label>
+						<label class="teleport-form__item">
+							<input type="radio" name="teleport">
+							<span>Персонаж</span>
+						</label>
+						<label class="teleport-form__item">
+							<input type="radio" name="teleport">
+							<span>Персонаж</span>
+						</label>
+						<label class="teleport-form__item">
+							<input type="radio" name="teleport">
+							<span>Персонаж</span>
+						</label>
+					</div>
+					<button class="btn teleport-form__btn" type="submit">Отправить</button>
+				</form>
+			</li>
+		</ul>
+		<button class="exit-btn lk__exit" type="button">Выход</button>
+	</div>
+	<div class="marquee marquee--bottom">
+		<img src="assets/images/marquee.svg" alt="image">
+		<img src="assets/images/marquee.svg" alt="image">
+		<img src="assets/images/marquee.svg" alt="image">
+	</div>
+</main>
+@@include("blocks/link/link.html")
