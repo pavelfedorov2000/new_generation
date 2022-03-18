@@ -1,22 +1,18 @@
 .promo {
-
-	padding-top: 19rem;
 	// .promo__grid
 
 	&__grid {
 		display: grid;
-		width: 108.2rem;
-		grid-template-rows: 1fr max-content 2.7rem max-content 6.3rem 7.5rem 34.6rem - 30.7rem;
-		grid-template-columns: minmax(31.5rem, max-content) 3.2rem max-content 54.1rem;
+		grid-template-rows: vh(385 - 357) max-content vh(27) max-content vh(63) vh(75);
+		grid-template-columns: minmax(vh(315), max-content) vh(32) max-content 1fr vh(320);
 		align-items: center;
 		grid-template-areas:
-			". . . img"
-			"title title title img"
-			". . . img"
-			"subtitle subtitle subtitle img"
-			". . . img"
-			"btn . descr img"
-			". . . img"
+			". . . . img"
+			"title title title . img"
+			". . . . img"
+			"subtitle subtitle subtitle . img"
+			". . . . ."
+			"btn . descr . ."
 		;
 	}
 
@@ -46,6 +42,7 @@
 	&__description {
 		grid-area: descr;
 		position: relative;
+		text-transform: uppercase;
 
 		p {
 			@extend %text-16;
@@ -62,22 +59,21 @@
 
 		span {
 			position: absolute;
-			top: calc(100% + 1.2rem);
+			top: calc(100% + vh(12));
 			left: (181 - 32) / 202 * 100%;
 			@extend %text-12;
 			font-weight: 900;
-			text-transform: uppercase;
 			color: #FDBF00;
 			white-space: nowrap;
-			padding-left: 2.8rem;
+			padding-left: vh(28);
 
 			&::before {
 				content: '';
 				position: absolute;
-				top: -0.5rem;
+				top: vh(-5);
 				left: 0;
-				width: 2.2rem;
-				height: 1.6rem;
+				width: vh(22);
+				height: vh(16);
 				background-image: url(../images/descr-arrow.svg);
 				@extend %bg-contain;
 			}
@@ -88,5 +84,8 @@
 
 	&__img {
 		grid-area: img;
+		width: 100%;
+		object-fit: cover;
+		height: vh(142);
 	}
 }

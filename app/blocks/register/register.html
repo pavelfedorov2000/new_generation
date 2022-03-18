@@ -1,3 +1,20 @@
-<div class="register">
-  <!--your code-->
+<div id="register" class="popup" style="background-image: url(assets/images/register-bg.jpg);">
+	<button class="back-btn" type="button" aria-label="Назад"></button>
+	<div class="popup__inner">
+		<div class="popup__top">
+			<div class="popup__title">Регистрация</div>
+		</div>
+		<form action="#" id="register-form" class="popup-form popup__form">
+			<div class="popup-form__fields">
+				<input class="popup-form__input" name="login" placeholder="Введите ваш логин" required>
+				<input class="popup-form__input" type="password" name="register_pass" placeholder="Введите ваш пароль"
+					required>
+				<input class="popup-form__input" type="password" name="repeat_register_pass"
+					placeholder="Продублируйте пароль" required>
+				<input class="popup-form__input" type="email" name="email" placeholder="Введите ваш e-mail" required>
+			</div>
+			<button class="btn popup-form__btn" type="submit">Отправить</button>
+			<div class="error popup-form__error" id="email-error">Ваш почтовый ящик уже используется</div>
+		</form>
+	</div>
 </div>

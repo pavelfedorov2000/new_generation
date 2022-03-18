@@ -1,11 +1,19 @@
 @@include("blocks/head/head.html", {"title": "Главная"})
-<main class="page home">
+<main class="page home" style="background-image: url(assets/images/promo-bg.jpg);">
 	@@include('blocks/burger/burger.html')
+	@@include('blocks/register/register.html')
+	@@include('blocks/forgot-password/forgot-password.html')
+	<div class="popup success" id="forgot-password-success">
+		<div class="success__container _container">
+			<p>На Вашу электронную почту было выслано письмо с инструкциями</p>
+		</div>
+	</div>
 	<div class="marquee marquee--top">
 		<img src="assets/images/marquee.svg" alt="image">
 		<img src="assets/images/marquee.svg" alt="image">
 		<img src="assets/images/marquee.svg" alt="image">
 	</div>
+	<button class="burger-btn" type="button" aria-label="Назад"></button>
 	<div class="_container home__container">
 		@@include('blocks/promo/promo.html')
 	</div>
@@ -16,3 +24,6 @@
 	</div>
 </main>
 @@include("blocks/link/link.html")
+</body>
+
+</html>

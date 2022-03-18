@@ -1,3 +1,19 @@
-<div class="auth">
-  <!--your code-->
+<div id="auth" class="popup" style="background-image: url(assets/images/auth-bg.jpg);">
+	<button class="back-btn" type="button" aria-label="Назад"></button>
+	<div class="popup__inner">
+		<div class="popup__top">
+			<div class="popup__title">Вход</div>
+			<button data-popup="forgot-password" class="popup__subtitle js-popup-open" type="button">Забыли
+				пароль?</button>
+		</div>
+		<form action="#" id="auth-form" class="popup-form popup__form">
+			<div class="popup-form__fields">
+				<input class="popup-form__input" name="login" placeholder="Введите ваш логин" required>
+				<input class="popup-form__input" type="password" name="register_pass" placeholder="Введите ваш пароль"
+					required>
+			</div>
+			<button class="btn popup-form__btn" type="submit">Отправить</button>
+			<div class="error" id="enter-password-error">Неверный пароль</div>
+		</form>
+	</div>
 </div>

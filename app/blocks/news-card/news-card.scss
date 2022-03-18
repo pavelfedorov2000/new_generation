@@ -23,8 +23,12 @@
 	&__content {
 		width: 100%;
 		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: max-content 1fr max-content 3rem max-content 1fr;
+		grid-template-columns: vh(20) 1fr vh(20);
+		grid-template-rows: vh(20) max-content 1fr max-content vh(30) max-content 1fr vh(20);
+
+		>* {
+			grid-column: 2 / 3;
+		}
 	}
 
 	// .news-card__date
@@ -32,12 +36,13 @@
 	&__date {
 		@extend %text-48;
 		font-weight: 900;
+		grid-row: 2 / 3;
 	}
 
 	// .news-card__title
 
 	&__title {
-		grid-row: 3 / 4;
+		grid-row: 4 / 5;
 		@extend %text-36;
 		font-weight: 500;
 	}
@@ -45,7 +50,7 @@
 	// .news-card__text
 
 	&__text {
-		grid-row: 5 / 6;
+		grid-row: 6 / 7;
 		font-weight: 300;
 		@extend %text-18;
 	}
@@ -57,7 +62,7 @@
 	// .news__container
 
 	&__container {
-		width: 151rem;
+		width: vh(1510 + 15 * 2);
 	}
 
 	// .news__top
@@ -75,7 +80,7 @@
 	// .news__title
 
 	&__title {
-		max-width: 91.7rem;
+		max-width: vh(917);
 	}
 
 	// .news__forum
@@ -87,7 +92,7 @@
 		position: relative;
 		display: grid;
 		justify-items: end;
-		grid-gap: 3.5rem;
+		grid-gap: vh(35);
 	}
 
 	&__forum-link {
@@ -95,16 +100,23 @@
 		@extend %text-24;
 		font-weight: 900;
 		color: #FFD400;
-		padding-left: 6.5rem;
-		padding-right: 3.3rem;
+		padding-left: vh(65);
+		padding-right: vh(33);
+		transition: .3s color;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $blue;
+			}
+		}
 
 		&::before {
 			content: '';
 			position: absolute;
-			top: -2rem;
+			top: vh(-20);
 			left: 0rem;
-			width: 5.5rem;
-			height: 4.1rem;
+			width: vh(55);
+			height: vh(41);
 			background-image: url(../images/forum-arrow.svg);
 			@extend %bg-contain;
 		}
@@ -115,7 +127,7 @@
 	&__slider {
 		>* {
 			&:not(:last-child) {
-				margin-bottom: 2.3rem;
+				margin-bottom: vh(23);
 			}
 		}
 	}
@@ -125,6 +137,6 @@
 	&__slider-arrows {
 		display: grid;
 		grid-template-columns: repeat(2, max-content);
-		grid-gap: 3rem;
+		grid-gap: vh(30);
 	}
 }

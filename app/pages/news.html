@@ -1,5 +1,5 @@
 @@include("blocks/head/head.html", {"title": "Новости"})
-<main class="page news">
+<main class="page news" style="background-image: url(assets/images/news-bg.jpg);">
 	@@include('blocks/burger/burger.html')
 	<div class="marquee marquee--top">
 		<img src="assets/images/marquee.svg" alt="image">
@@ -46,4 +46,41 @@
 		<img src="assets/images/marquee.svg" alt="image">
 	</div>
 </main>
+<script src="./assets/libs/js/swiper-bundle.min.js"></script>
 @@include("blocks/link/link.html")
+<script>
+	new Swiper('.news-slider', {
+		loop: true,
+		slidesPerView: 2,
+		spaceBetween: 60,
+		speed: 1000,
+		/* autoplay: {
+		delay: 3000,
+		}, */
+		/* pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+		}, */
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		/* breakpoints: {
+		576: {
+		slidesPerView: 2,
+		},
+		992: {
+		slidesPerView: 4,
+		}
+		}, */
+		/* on: {
+		slideChange: function () {
+		new LazyLoad();
+		},
+		}, */
+	});
+
+</script>
+</body>
+
+</html>

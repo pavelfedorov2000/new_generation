@@ -1,7 +1,21 @@
 @@include("blocks/head/head.html", {"title": "Личный кабинет"})
-<main class="page lk">
+<main class="page lk" style="background-image: url(assets/images/lk-bg.jpg);">
 	<a href="#" class="label">Проблемы с запуском?</a>
 	@@include('blocks/burger/burger.html')
+	@@include('blocks/register/register.html')
+	@@include('blocks/auth/auth.html')
+	@@include('blocks/password-change/password-change.html')
+	@@include('blocks/forgot-password/forgot-password.html')
+	<div class="popup success" id="password-change-success">
+		<div class="success__container _container">
+			<p>На Вашу электронную почту было выслано письмо с подтверждением</p>
+		</div>
+	</div>
+	<div class="popup success" id="forgot-password-success">
+		<div class="success__container _container">
+			<p>На Вашу электронную почту было выслано письмо с инструкциями</p>
+		</div>
+	</div>
 	<div class="marquee marquee--top">
 		<img src="assets/images/marquee.svg" alt="image">
 		<img src="assets/images/marquee.svg" alt="image">
@@ -11,8 +25,8 @@
 		<h1 class="lk__title">Личный кабинет</h1>
 		<div class="user lk__user">
 			<picture class="user__img">
-				<source type="image/webp" data-srcset="assets/images/user.webp">
-				<img class="lazy" data-src="assets/images/user.png" alt="image" width="160" height="160">
+				<source type="image/webp" srcset="assets/images/user.webp">
+				<img src="assets/images/user.png" alt="image" width="160" height="160">
 			</picture>
 			<div class="user__name">Vasia</div>
 			<div class="user__balance">
@@ -25,12 +39,14 @@
 			</div>
 		</div>
 		<ul class="lk__menu">
-			<li><a href="#" class="lk__menu-link">Cмена пароля</a></li>
+			<li><button data-popup="password-change" class="lk__menu-link js-popup-open" type="button">Cмена пароля
+					</butt>
+			</li>
 			<li><a href="#" class="lk__menu-link">Пополнение счета</a></li>
 			<li data-target="teleport">
-				<a href="#" class="lk__menu-link">
+				<div class="lk__menu-link">
 					Телепорт
-				</a>
+				</div>
 				<form action="#" class="teleport-form">
 					<div class="teleport-form__items">
 						<label class="teleport-form__item">
@@ -67,3 +83,6 @@
 	</div>
 </main>
 @@include("blocks/link/link.html")
+</body>
+
+</html>

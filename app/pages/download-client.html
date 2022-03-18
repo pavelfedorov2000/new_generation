@@ -1,5 +1,5 @@
 @@include("blocks/head/head.html", {"title": "Скачать клиент"})
-<main class="page download-client">
+<main class="page download-client" style="background-image: url(assets/images/download-client-bg.jpg);">
 	@@include('blocks/burger/burger.html')
 	<div class="marquee marquee--top">
 		<img src="assets/images/marquee.svg" alt="image">
@@ -10,10 +10,10 @@
 		<h1 class="download-client__title">Скачать клиент</h1>
 		<div class="download-client__grid">
 			<ul class="download-client__list">
-				<li><a href="#" class="download-client__link">Google Диск</a></li>
-				<li><a href="#" class="download-client__link">Torrent </a></li>
-				<li><a href="#" class="download-client__link">Скачать напрямую</a></li>
-				<li><a href="#" class="download-client__link">Загрузить лаунчер</a></li>
+				<li><a href="#" class="download-client__link" target="_blank">Google Диск</a></li>
+				<li><a href="#" class="download-client__link" target="_blank">Torrent </a></li>
+				<li><a href="#" class="download-client__link" target="_blank">Скачать напрямую</a></li>
+				<li><a href="#" class="download-client__link" target="_blank">Загрузить лаунчер</a></li>
 			</ul>
 			<p class="download-client__text">При скачивании через TORRENT просьба оставаться на раздаче.</p>
 		</div>
@@ -25,3 +25,6 @@
 	</div>
 </main>
 @@include("blocks/link/link.html")
+</body>
+
+</html>

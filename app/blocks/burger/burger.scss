@@ -7,32 +7,20 @@
 	z-index: 100;
 	width: 100%;
 	height: 100vh;
-	//background-color: $accent;
 	transition: 0.5s top;
 	overflow: auto;
 	background-color: #000;
-	padding-top: 147 * 100vh / 1080;
-	padding-bottom: 128 * 100vh / 1080;
+	padding-top: vh(147);
+	padding-bottom: vh(128);
 
 	&.active {
 		top: 0;
 	}
 
-	&__back {
-		position: absolute;
-		left: 476 * 100vw / 1920;
-		@extend %pos-center-y;
-		z-index: 102;
-		width: 5.9rem;
-		height: 5.9rem;
-		background-image: url(../images/back.svg);
-		@extend %bg-contain;
-	}
-
 	// .burger-menu__label
 
 	&__label {
-		transform: translateX(14.5rem) rotate(360deg);
+		transform: translateX(vh(145)) rotate(360deg);
 		transition: 1s transform;
 
 		&.active {
@@ -46,7 +34,7 @@
 		position: relative;
 		height: 100%;
 		display: grid;
-		grid-template-rows: 1fr 3rem max-content;
+		grid-template-rows: 1fr vh(30) max-content;
 		justify-items: center;
 		grid-template-areas:
 			"nav"
@@ -65,7 +53,7 @@
 
 	&__list {
 		display: grid;
-		grid-gap: 7.5rem;
+		grid-gap: vh(75);
 		justify-items: center;
 	}
 
@@ -73,8 +61,8 @@
 
 	&__list-link {
 		@extend %text-72;
-		font-weight: 200;
-		text-transform: uppercase;
+		font-family: Montserrat, sans-serif;
+		color: #fff;
 		transition: .3s all;
 
 		@media (any-hover: hover) {
@@ -105,10 +93,7 @@
 
 	display: grid;
 	grid-auto-flow: column;
-	grid-gap: 2.4rem;
-	// .social__item
-
-	&__item {}
+	grid-gap: vh(24);
 
 	// .social__link
 
@@ -121,7 +106,7 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				color: #FFD400;
+				color: $blue;
 			}
 		}
 	}

@@ -8,7 +8,7 @@ import autoprefixer from 'autoprefixer';
 import cleanCSS from 'gulp-clean-css';
 import sourcemaps from 'gulp-sourcemaps';
 import rename from 'gulp-rename';
-import sassLint from 'gulp-sass-lint'; 
+import sassLint from 'gulp-sass-lint';
 import gulpStylelint from 'gulp-stylelint';
 import config from './config';
 
@@ -47,7 +47,7 @@ export const stylesLinter = () => (
       reporters: [
         {
           formatter: 'string',
-          console: true,
+          console: false,
         },
       ],
     }))

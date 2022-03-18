@@ -4,7 +4,7 @@
 	padding-bottom: vh(87);
 
 	&__container {
-		width: 192rem - 21.5rem * 2;
+		width: vh(1920 - 215 * 2);
 
 		>* {
 			&:not(:last-child) {
@@ -46,6 +46,7 @@
 	&__menu-link {
 		@extend %text-48;
 		font-weight: 900;
+		color: #fff;
 		transition: .3s color;
 
 		@media (any-hover: hover) {
@@ -72,8 +73,8 @@
 .user {
 
 	display: grid;
-	grid-template-columns: 16rem max-content;
-	grid-gap: 2rem 1.5rem;
+	grid-template-columns: vh(160) max-content;
+	grid-gap: vh(20) vh(15);
 
 	>*:not(.user__img) {
 		grid-column: 2 / 3;
@@ -83,7 +84,7 @@
 
 	&__img {
 		grid-row: span 3;
-		height: 16rem;
+		height: vh(160);
 
 		img {
 			@extend %cover;
@@ -113,7 +114,7 @@
 		display: grid;
 		grid-auto-flow: column;
 		grid-auto-columns: max-content;
-		grid-gap: 1.5rem;
+		grid-gap: vh(15);
 	}
 
 	// .user__status
@@ -130,19 +131,18 @@
 }
 
 .teleport-form {
-
-	width: 27rem;
+	width: vh(270);
 	position: absolute;
 	top: 0;
-	left: calc(100% + 5.8rem);
-	z-index: 105;
+	left: calc(100% + vh(58));
+	z-index: 25;
 	display: grid;
-	grid-gap: 3rem;
+	grid-gap: vh(30);
 	justify-items: center;
 	align-content: center;
 	background-color: #F2F2F2;
-	border-radius: 3rem;
-	padding: 1.1rem 1.5rem 1.7rem;
+	border-radius: vh(30);
+	padding: vh(11) vh(15) vh(17);
 	opacity: 0;
 	transition: .3s opacity;
 
@@ -150,15 +150,15 @@
 
 	&__items {
 		display: grid;
-		grid-gap: 1.7rem;
+		grid-gap: vh(17);
 		justify-self: stretch;
 		justify-items: center;
-		max-height: 14rem - 3rem;
-		padding-bottom: 3rem;
+		max-height: vh(110);
+		padding-bottom: vh(30);
 		overflow-y: scroll;
 
 		&::-webkit-scrollbar {
-			width: 0.5rem;
+			width: vh(5);
 			background-color: #fff;
 		}
 
@@ -203,15 +203,15 @@
 	// .teleport-form__btn
 
 	&__btn {
-		padding: 0.65rem 3.4rem;
-		font-size: 1.4rem;
-		line-height: 1.7rem;
-		background-color: #FDBF00;
-		border-radius: 3rem;
+		padding: vh(6.5) vh(34);
+		font-size: vh(14);
+		line-height: 17 / 14 * 100%;
+		background-color: #0047FF;
+		border-radius: vh(30);
 
 		@media (any-hover: hover) {
 			&:hover {
-				background-color: #FFD400;
+				background-color: $blue;
 			}
 		}
 	}

@@ -1,15 +1,16 @@
 .btn {
 	@extend %text-30;
 	font-weight: 600;
-	background-color: #FFD400;
-	border-radius: 5rem;
+	background-color: $blue;
+	color: #fff;
+	border-radius: vh(50);
 	text-align: center;
 	text-transform: uppercase;
 	transition: 0.3s all;
 
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: #FDBF00;
+			background-color: #0047FF;
 		}
 	}
 }

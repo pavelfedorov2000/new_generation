@@ -1,17 +1,19 @@
 .swiper-button-prev,
 .swiper-button-next {
 	position: static;
-	width: 8.8rem;
-	height: 8.8rem;
+	width: vh(88);
+	height: vh(88);
 	border-radius: 50%;
 	background-color: #393939;
 	margin: 0;
-	@extend %flex-center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	transition: .3s all;
 
 	svg {
-		width: 3.2rem;
-		height: 2.4rem;
+		width: vh(32);
+		height: vh(24);
 
 		path {
 			transition: .3s fill;
